@@ -1,5 +1,8 @@
-# ─── Planning / AI-generated research docs ───────────────────────────────────
-docs/
+# ─── Planning / AI-generated research docs (local only) ─────────────────────
+# Technical guides in docs/guides/ ARE tracked (see below)
+docs/planning/
+docs/*.md
+!docs/guides/
 
 # ─── Node ─────────────────────────────────────────────────────────────────────
 node_modules/
