@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="#0f0f14" stroke="#1e1e2e" stroke-width="2"/>
+
+  <!-- Outer triangle (Three.js nod) - wireframe style -->
+  <polygon
+    points="60,14 102,82 18,82"
+    fill="none"
+    stroke="#4f8ef7"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+    opacity="0.45"
+  />
+
+  <!-- Inner solid triangle - compiled/optimized core -->
+  <polygon
+    points="60,32 88,76 32,76"
+    fill="#1a2540"
+    stroke="#4f8ef7"
+    stroke-width="2"
+    stroke-linejoin="round"
+  />
+
+  <!-- WASM accent - small square rotated 45° bottom center -->
+  <rect
+    x="52.5" y="72"
+    width="15" height="15"
+    rx="2"
+    fill="#4f8ef7"
+    transform="rotate(45 60 79.5)"
+  />
+
+  <!-- Center node dot -->
+  <circle cx="60" cy="54" r="5" fill="#7eb8ff"/>
+
+  <!-- Speed lines - left -->
+  <line x1="16" y1="52" x2="32" y2="52" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="20" y1="60" x2="32" y2="60" stroke="#4f8ef7" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Speed lines - right -->
+  <line x1="88" y1="52" x2="104" y2="52" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="88" y1="60" x2="100" y2="60" stroke="#4f8ef7" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Label -->
+  <text
+    x="60" y="101"
+    text-anchor="middle"
+    font-family="'SF Mono', 'Fira Code', monospace"
+    font-size="9.5"
+    font-weight="600"
+    letter-spacing="2"
+    fill="#7eb8ff"
+  >TINYTHREE</text>
+</svg>

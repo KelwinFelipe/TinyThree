@@ -1,0 +1,21 @@
+{
+  "name": "@tinythree/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for TinyThree — compile, analyze and init Three.js scenes",
+  "type": "module",
+  "bin": {
+    "tinythree": "./bin/tinythree.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tinythree/compiler": "workspace:*",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

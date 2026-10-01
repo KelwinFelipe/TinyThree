@@ -1,0 +1,38 @@
+{
+  "name": "tinythree",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AOT optimizer for Three.js scenes — compiles to a minimal C/WASM + WebGL2 runtime",
+  "keywords": ["three.js", "webgl2", "webassembly", "wasm", "3d", "renderer", "aot", "optimizer"],
+  "homepage": "https://github.com/your-username/tinythree#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/tinythree.git"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r run build",
+    "build:runtime": "make -C runtime/src",
+    "build:all": "pnpm run build:runtime && pnpm run build",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "clean": "pnpm -r run clean && make -C runtime/src clean",
+    "example:cube": "pnpm --filter @tinythree/example-cube dev",
+    "example:solar": "pnpm --filter @tinythree/example-solar-system dev",
+    "example:starfield": "pnpm --filter @tinythree/example-starfield dev"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.1.0"
+}

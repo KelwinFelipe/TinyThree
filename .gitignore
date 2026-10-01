@@ -1,0 +1,51 @@
+# ─── Planning / AI-generated research docs ───────────────────────────────────
+docs/
+
+# ─── Node ─────────────────────────────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+.npm/
+
+# ─── Build outputs ────────────────────────────────────────────────────────────
+dist/
+build/
+out/
+*.wasm
+!runtime/prebuilt/*.wasm
+
+# ─── C / Emscripten ───────────────────────────────────────────────────────────
+*.o
+*.a
+*.d
+*.map
+.emscripten_cache/
+emscripten_cache/
+cache/
+
+# ─── TypeScript ───────────────────────────────────────────────────────────────
+*.tsbuildinfo
+*.js.map
+
+# ─── Test / coverage ──────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# ─── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Editor ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Env ──────────────────────────────────────────────────────────────────────
+.env
+.env.local
+
+# ─── Benchmarks output ────────────────────────────────────────────────────────
+benchmarks/results/

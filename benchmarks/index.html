@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TinyThree Benchmarks</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f14; color: #cdd6f4;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      padding: 48px 32px;
+      max-width: 900px; margin: 0 auto;
+    }
+    h1 { color: #7eb8ff; font-size: 22px; margin-bottom: 8px; }
+    h1 span { color: #4f8ef7; }
+    p  { color: #6c7086; font-size: 13px; margin-bottom: 36px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .card {
+      border: 1px solid #1e1e2e;
+      border-radius: 10px;
+      padding: 20px;
+      background: #13131a;
+    }
+    .card h2 { font-size: 14px; color: #cdd6f4; margin-bottom: 6px; }
+    .card p  { font-size: 12px; color: #6c7086; margin-bottom: 16px; }
+    .card a {
+      display: inline-block;
+      padding: 8px 14px;
+      background: #1a2540;
+      color: #7eb8ff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 12px;
+      border: 1px solid #2a3a60;
+      transition: background 0.15s;
+    }
+    .card a:hover { background: #1e2e50; }
+    .note {
+      margin-top: 36px;
+      padding: 16px;
+      border-left: 3px solid #4f8ef7;
+      background: #13131a;
+      font-size: 12px;
+      color: #6c7086;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>TinyThree <span>/</span> Benchmarks</h1>
+  <p>Each benchmark measures the same scene rendered by Three.js and TinyThree side-by-side.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Demo 1 — Rotating Cube</h2>
+      <p>Pipeline validation. Single mesh, no instancing.<br>
+         Expected: Three.js wins on TTFF (first load).<br>
+         TinyThree wins on P99 stability.</p>
+      <a href="cube/index.html">Run →</a>
+    </div>
+    <div class="card">
+      <h2>Demo 2 — Solar System</h2>
+      <p>27 nodes, textures, transform animations, hierarchy.<br>
+         Compiler promotes 16 identical moons to 1 instanced draw call.</p>
+      <a href="solar-system/index.html">Run →</a>
+    </div>
+    <div class="card">
+      <h2>Demo 3 — Starfield</h2>
+      <p>10,000 stars in three variants:<br>
+         A) no instancing  B) Points  C) InstancedMesh<br>
+         Tests the break-even hypothesis (~500–1000 objects).</p>
+      <a href="starfield/index.html">Run →</a>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Methodology:</strong>
+    300-frame warm-up (JIT stabilization) + 3600-frame collection window (≈60 s at 60 FPS).
+    Metrics: P50 / P95 / P99 frame time · FPS average · GC pause count · TTFF with and without browser cache.
+    Baseline B (Three.js tree-shaken via Vite) used for bundle-size comparisons — not the full 600 KB bundle.
+    Open DevTools Console to see raw results. Results are written to <code>window.benchmarkResults</code>.
+  </div>
+</body>
+</html>

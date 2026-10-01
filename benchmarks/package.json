@@ -1,0 +1,17 @@
+{
+  "name": "@tinythree/benchmarks",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:scenes": "tinythree compile src/scenes/cube.ts --out dist/cube && tinythree compile src/scenes/starfield.ts --out dist/starfield && tinythree compile src/scenes/solar-system.ts --out dist/solar-system",
+    "serve": "npx serve .",
+    "test:compat": "node src/compat-test.js"
+  },
+  "dependencies": {
+    "three": "^0.165.0"
+  },
+  "devDependencies": {
+    "@tinythree/cli": "workspace:*"
+  }
+}
